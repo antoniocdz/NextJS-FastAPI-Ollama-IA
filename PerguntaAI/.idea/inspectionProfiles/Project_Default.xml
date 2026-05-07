@@ -1,0 +1,71 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <list>
+          <option value="gunicorn" />
+          <option value="pytz" />
+          <option value="asgiref" />
+          <option value="bootstrap4" />
+          <option value="certifi" />
+          <option value="cffi" />
+          <option value="charset-normalizer" />
+          <option value="cryptography" />
+          <option value="defusedxml" />
+          <option value="Django" />
+          <option value="idna" />
+          <option value="oauthlib" />
+          <option value="pycparser" />
+          <option value="PyJWT" />
+          <option value="python3-openid" />
+          <option value="requests" />
+          <option value="requests-oauthlib" />
+          <option value="social-auth-app-django" />
+          <option value="social-auth-core" />
+          <option value="sqlparse" />
+          <option value="typing_extensions" />
+          <option value="tzdata" />
+          <option value="urllib3" />
+          <option value="aiohttp" />
+          <option value="aiosignal" />
+          <option value="async-timeout" />
+          <option value="asynctest" />
+          <option value="attrs" />
+          <option value="beautifulsoup4" />
+          <option value="dj-static" />
+          <option value="django-bootstrap" />
+          <option value="django-bootstrap4" />
+          <option value="django-jazzmin" />
+          <option value="django-stdimage" />
+          <option value="frozenlist" />
+          <option value="geoip2" />
+          <option value="importlib-metadata" />
+          <option value="maxminddb" />
+          <option value="multidict" />
+          <option value="packaging" />
+          <option value="Pillow" />
+          <option value="progressbar2" />
+          <option value="psycopg2-binary" />
+          <option value="PyMySQL" />
+          <option value="python-utils" />
+          <option value="six" />
+          <option value="soupsieve" />
+          <option value="static3" />
+          <option value="typing-extensions" />
+          <option value="whitenoise" />
+          <option value="yarl" />
+          <option value="zipp" />
+          <option value="mysql-connector-python" />
+          <option value="mysqlclient" />
+          <option value="protobuf" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
