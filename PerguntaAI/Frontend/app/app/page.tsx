@@ -7,11 +7,6 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   async function perguntarIA() {
-    if (!pergunta.trim()) {
-      setResposta("Digite uma pergunta");
-      return;
-    }
-
     try {
       setLoading(true);
       setResposta("");
@@ -24,13 +19,14 @@ export default function Home() {
         body: JSON.stringify({ pergunta }),
       });
 
+      // pega resposta crua (importante pra debug)
       const text = await res.text();
 
       console.log("STATUS:", res.status);
       console.log("RESPOSTA:", text);
 
       if (!res.ok) {
-        throw new Error(text || "Erro na API");
+        throw new Error(text);
       }
 
       let data;
@@ -40,23 +36,19 @@ export default function Home() {
         throw new Error("Resposta não é JSON válido");
       }
 
-      setResposta(data?.resposta || "Sem resposta da IA");
+      // formato correto no Ollama
+      setResposta(data.resposta || "Sem resposta");
 
-    } catch (error: any) {
+    } catch (error) {
       console.error("ERRO:", error);
-
-      setResposta(
-        error.message?.includes("Failed to fetch")
-          ? "Erro de conexão com a API (verifique se o servidor está rodando)"
-          : error.message || "Erro ao consultar a API"
-      );
+      setResposta("Erro ao consultar a API");
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <div style={{ padding: 20, maxWidth: 800, margin: "0 auto" }}>
+    <div style={{ padding: 20 }}>
       <h1>Consulta com IA</h1>
 
       <textarea
@@ -89,18 +81,9 @@ export default function Home() {
       </button>
 
       <p><b>Resposta:</b></p>
-
-      <div
-        style={{
-          background: "#f4f4f4",
-          padding: 15,
-          borderRadius: 8,
-          whiteSpace: "pre-wrap",
-          minHeight: 100,
-        }}
-      >
+      <pre>
         {loading ? "Gerando resposta..." : resposta}
-      </div>
+      </pre>
     </div>
   );
 }
